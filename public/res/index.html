@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1.0, maximum-scale=1.0,viewport-fit=cover">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.js"></script>
+</head>
+<body>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img class="bg-img" src="./img/A.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="bg-img" src="./img/B.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="bg-img" src="./img/C.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="top-logo">
+        <img src="./img/logo.png" alt="" class="left">
+        <div class="right">
+            <a href="">
+                <img class="icon-img" src="./img/1_06.png" alt="">
+            </a>
+            <a href="">
+                <img class="icon-img" src="./img/1_08.png" alt="">
+            </a>
+            <a href="">
+                <img class="icon-img" src="./img/1_10.png" alt="">
+            </a>
+            <a href="">
+                <img class="icon-img" src="./img/1_12.png" alt="">
+            </a>
+            <a href="">
+                <img class="icon-img" src="./img/1_14.png" alt="">
+            </a>
+            <a href="">
+                <img class="icon-img" src="./img/1_16.png" alt="">
+            </a>
+            <a href="">
+                <img class="icon-img" src="./img/1_18.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="download">
+        <!-- 安卓下载 -->
+        <a href="" class="box-a android">
+            <img class="box-a" src="./img/1_31.png" alt="">
+        </a>
+        <!-- ios下载 -->
+        <a href="" class="box-a ios">
+            <img class="box-a" src="./img/1_29.png" alt="">
+        </a>
+    </div>
+</body>
+<script>
+    var mySwiper = new Swiper ('.swiper', {
+        loop: true, // 循环模式选项
+        autoplay:{
+            delay: 2000,
+            disableOnInteraction: false,
+        }
+    }) 
+    
+    // 判断是否是苹果手机
+    var isIos = () => {
+        var u = navigator.userAgent;
+        return u.includes('iPhone') || u.includes('iOS');
+    }
+    var android = document.getElementsByClassName('android')[0];
+    var ios = document.getElementsByClassName('ios')[0];
+    if(isIos()){
+        android.style.display = 'none';
+    }else{
+        ios.style.display = 'none';
+    }
+</script>
+</html>
